@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import WeekTable from './Table';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -21,7 +23,7 @@ const LoginPage = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="username">           :שם משתמש</label>
+        <label htmlFor="username">:שם משתמש</label>
         <br />
         <input
           type="password"
@@ -30,9 +32,13 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <label htmlFor="password">         :סיסמה</label>
+        <label htmlFor="password">:סיסמה</label>
         <br />
         <button type="submit">היכנס</button>
+        <br />
+        <Link to="/Table">
+          <button>טבלת משמרות</button>
+        </Link>
       </form>
     </div>
   );
